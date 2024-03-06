@@ -27,3 +27,10 @@
 .banner-text-area >*{
     z-index: 2;
 }
+
+@media (max-width: 768px) {
+    .banner-text-area {
+      color: transparent;
+      opacity: 0;
+    }
+  }

@@ -2,12 +2,20 @@ import React from 'react'
 import {Badge} from 'react-bootstrap';
 import "./MovieCard.style.css";
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
+import {useNavigate} from 'react-router-dom'
 const MovieCard = ({movie}) => {
+    const navigate = useNavigate();
+    
+    // 1. 카드를 눌렀을 때, 상세페이지로 이동되게 한다. id값을 URL에 뿌려준다.
 
+    const moveToDetailPage = () =>{
+      navigate(`/movies/${movie.id}`);
+    }
     const posterPath = movie?.poster_path;
     const imageUrl = `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${posterPath}`;
 
     const {data:genreData} = useMovieGenreQuery();
+
     
     const showGenre = (genreIdList) =>{
       if(!genreData){
@@ -24,7 +32,7 @@ const MovieCard = ({movie}) => {
   
     return (
     <div style={{background:`url(${imageUrl})`}} className='movie-card'>
-      <div className='overlay'>
+      <div className='overlay' onClick={moveToDetailPage}>
         <h4>{movie.title}</h4>
         {showGenre(movie.genre_ids).map((genre,index)=>(
           <Badge className="badge" bg="danger" key={index}>{genre}</Badge>
