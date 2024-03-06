@@ -11,11 +11,17 @@ const MovieSlider = ({title,movies, responsive}) => {
     <div>
     <h3>{title}</h3>
     <Carousel
+        draggable={true}
         infinite={true}
         centerMode={true}
         itemClass='movie-slider p-1'
         containerClass='carousel-container'
         responsive={responsive}
+        transitionDuration={500}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        autoPlaySpeed={1000}
+        keyBoardControl={true}
+        ssr={true} // means to render carousel on server-side.
     >
     {movies.map((movie,index)=><MovieCard movie={movie} key={index}/>)}
     </Carousel>;
