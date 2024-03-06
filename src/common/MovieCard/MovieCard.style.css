@@ -4,7 +4,8 @@
     background-size: cover;
     cursor: pointer;
     transition: 0.5s;
-    /* position: relative; */
+    z-index: 3;
+    margin: 20px;
 }
 
 .overlay{
@@ -16,25 +17,30 @@
     color:white;
     font-weight: bold;
     overflow-wrap: break-word;
-    position: absolute;
 }
 
 .overlay:hover{
     opacity: 1;
-    padding:20px;
+    padding:10px;
 
 }
 
 .movie-card:hover{
     transform: scale(1.2) translate(20px);
     z-index: 2;
+    justify-content: left;
 }
 
 .movie-detail-Info{
-    padding-top: 20px;
+    padding-top: 40px;
     background: none;
+    
 }
 
 .badge{
     margin: 4px;
+}
+
+.movieTitle{
+    justify-content: left;
 }

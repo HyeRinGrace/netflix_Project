@@ -20,7 +20,7 @@ div{
 
 /* 네비게이션 링크의 스타일 */
 .navbar-nav .nav-link {
-    color: #fff ; /* 텍스트 색상 */
+    color: #fff !important; /* 텍스트 색상 */
     margin-right: 20px; /* 링크 간 여백 */
     
 }

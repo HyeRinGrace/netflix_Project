@@ -1,3 +1,5 @@
+//가장 큰 배너 이미지 출력
+
 import React from 'react'
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert';
@@ -11,6 +13,7 @@ const Banner = () => {
     if (isError) {
       return <Alert variant="danger">{error.message}</Alert>; // JSX를 반환해야 합니다.
     }
+
     console.log(data);
     // data.results[0]가 정의되어 있는지 확인
     const posterPath = data?.results[0].poster_path;

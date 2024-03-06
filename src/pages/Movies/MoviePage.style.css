@@ -1,0 +1,14 @@
+html{
+    background-color: black;
+}
+
+.SortButton{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.SortButton Button{
+    padding:10px;
+    margin: 10px;
+}
