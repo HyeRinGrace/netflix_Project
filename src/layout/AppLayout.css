@@ -1,6 +1,6 @@
-/* html{
-    background-color: #000;
-}*/
+html{
+    background-color: #181819;
+}
 
 div{
     background-color: #000;
@@ -9,7 +9,7 @@ div{
 
 /* 네비게이션 바의 배경을 블랙으로 설정 */
 .bg-body-tertiary {
-    background-color: #000 ;
+    background-color: #181819 ;
 }
 
 /* 로고 이미지의 스타일 */

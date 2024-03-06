@@ -4,6 +4,7 @@ import React from 'react'
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert';
 import './Banner.style.css';
+import {Container} from 'react-bootstrap'
 
 const Banner = () => {
     let { data, isLoading, isError, error } = usePopularMoviesQuery();
@@ -14,7 +15,6 @@ const Banner = () => {
       return <Alert variant="danger">{error.message}</Alert>; // JSX를 반환해야 합니다.
     }
 
-    console.log(data);
     // data.results[0]가 정의되어 있는지 확인
     const posterPath = data?.results[0].poster_path;
     const imageUrl = `https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/${posterPath}`
@@ -27,7 +27,6 @@ const Banner = () => {
               <p className="banner-overview">{data?.results[0].overview}</p>
             </div>
         </div>
-        
       </>
     );
 }

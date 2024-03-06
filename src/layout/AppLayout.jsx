@@ -11,12 +11,18 @@ const AppLayout = () => {
     const [keyword,setKeyword] = useState();
     const navigate = useNavigate();
 
+    const toMoveMovies = () =>{
+      navigate('/movies');
+    }
+
     const searchByKeyword = (event) =>{
       event.preventDefault();
       //keyword값으로 url을 변경시켜줘야함
       navigate(`/movies?q=${keyword}`);
       setKeyword('');
     }
+
+
     return (
         <div>
             <Navbar expand="lg" className="navContainer">
@@ -32,7 +38,7 @@ const AppLayout = () => {
                 navbarScroll
               >
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="movies">Movies</Nav.Link>
+                <Nav.Link onClick={toMoveMovies}>Movies</Nav.Link>
               </Nav>
               <Form className="d-flex" onSubmit={(event)=>searchByKeyword(event)}>
                 <Form.Control

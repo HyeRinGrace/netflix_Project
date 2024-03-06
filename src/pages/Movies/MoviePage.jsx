@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { useSearchParams,useNavigate } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { Alert } from 'react-bootstrap';
 import { useSearchMovieQuery } from '../../hooks/useSearchMovie';
 import {Col,Row,Container,Button} from 'react-bootstrap';
@@ -22,18 +22,11 @@ const MoviePage = () => {
   const [query,setQuery] = useSearchParams();
   const [page,setPage] = useState(1);
   const keyword = query.get('q');
-  const navigate = useNavigate();
 
   const {data,isLoading,isError,error} = useSearchMovieQuery({
     keyword,
     page,
   }); //키워드를 넘겨줌
-
-  const array = [data.results];
-  array.map((movie)=>{
-    console.log(movie);
-  });
-
 
   // 페이지네이션 클릭할때 실행시킬 함수
   const handlePageClick = ({selected}) =>{
@@ -45,10 +38,7 @@ const MoviePage = () => {
       const best = item.popularity;
     })
   }
-  //영화 상세페이지로 이동시킬 함수
-  const moveToDetailPage = () =>{
-    navigate(`/movies/`);
-  }
+
 
   if(isLoading){
     return <h1>Loading...</h1>
@@ -71,7 +61,7 @@ const MoviePage = () => {
         <Row>
         {data?.results.map((movie,index)=> (
         <Col key={index} lg={4} xs={12}>
-          <MovieCard movie={movie} onClick={moveToDetailPage}/>
+          <MovieCard movie={movie}/>
         </Col>
       ))}
       </Row>
