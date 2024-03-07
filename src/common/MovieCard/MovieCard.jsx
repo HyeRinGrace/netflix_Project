@@ -9,6 +9,7 @@ const MovieCard = ({movie}) => {
 
     const moveToDetailPage = () =>{
       navigate(`/movies/${movie.id}`);
+      window.scrollTo(0,0); //최상단으로 이동되는 경로 추가
     }
     const posterPath = movie?.poster_path;
     const imageUrl = `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${posterPath}`;
