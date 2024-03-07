@@ -52,9 +52,6 @@ const MovieDetail = () => {
       <Row>
         <Col><MovieTab/></Col>
       </Row>
-      <Row>
-        <Col><MovieRecommendation/></Col>
-      </Row>
     </Container>
   );
 };

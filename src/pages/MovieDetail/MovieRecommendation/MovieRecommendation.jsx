@@ -9,10 +9,13 @@ import { responsive } from '../../../constants/responsive';
 
 const MovieRecommendation = () => {
     let params = useParams();
-    const { data, isLoading } = useMovieRecommend(params);
+    const { data, isLoading, isError,error } = useMovieRecommend(params);
 
     if (isLoading) {
         return <div>Loading...</div>;
+    }
+    if(isError){
+        return <div>{error.message}</div>
     }
 
     let movies = data?.results;

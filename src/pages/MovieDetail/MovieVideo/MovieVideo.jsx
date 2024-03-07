@@ -1,5 +1,4 @@
 import React from 'react'
-import '../MovieVideo/MovieVideo.style.css';
 import {useParams} from'react-router-dom'
 import { useMovieVideo } from '../../../hooks/useMovieVideo';
 import {Container,Row} from 'react-bootstrap';

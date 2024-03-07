@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import MovieVideo from '../MovieVideo/MovieVideo';
 import MovieReviews from '../MovieReviews/MovieReviews';
 import '../MovieTabs/MovieTab.style.css';
+import MovieRecommendation from '../MovieRecommendation/MovieRecommendation';
 
 function MovieTab() {
   const [activeTab, setActiveTab] = useState('Reviews');
@@ -61,7 +62,7 @@ function MovieTab() {
       </div>
 
       <div id="recommendations" style={{ height: 'auto', marginTop: '20px' }}>
-        {/* Add content for Recommendations here */}
+        <MovieRecommendation/>
       </div>
     </>
   );
