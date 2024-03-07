@@ -6,7 +6,7 @@ export const useMovieVideo = ({id}) =>{
     return useQuery({
         queryKey:['movie-video',{id}],
         queryFn:()=>{
-            return api.get(`/movie/${id}/videos`)
+            return id?api.get(`/movie/${id}/videos`):'';
         },
         select:(result) => result.data,
 

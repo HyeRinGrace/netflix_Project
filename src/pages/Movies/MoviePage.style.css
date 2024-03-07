@@ -12,3 +12,10 @@ html{
     padding:10px;
     margin: 10px;
 }
+
+
+.page-link{
+    background-color: black !important;  
+    color: white !important;
+    border: none;
+}
