@@ -31,4 +31,3 @@ const MovieSlider = ({title,movies, responsive}) => {
 }
 
 export default MovieSlider
-// 오잉
