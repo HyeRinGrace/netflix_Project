@@ -6,7 +6,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 import '../MovieDetail/MovieDetailPage.style.css';
 import {Badge} from 'react-bootstrap';
 import MovieTab from './MovieTabs/MovieTab';
-import MovieRecommendation from './MovieRecommendation/MovieRecommendation';
+import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 
 const MovieDetail = () => {
   let params = useParams();
@@ -17,7 +17,7 @@ const MovieDetail = () => {
 
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <div>{isLoadingSpinner()}</div>
   }
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;

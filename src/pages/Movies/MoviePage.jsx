@@ -7,6 +7,7 @@ import '../Movies/MoviePage.style.css';
 import MovieCard from '../../common/MovieCard/MovieCard';
 import ReactPaginate from 'react-paginate';
 import '../Movies/MoviePage.style.css';
+import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 
 //검색
 //1. 검색어 입력 없이 movie 메뉴를 통해 진입 => popular movie 보여주기
@@ -40,8 +41,8 @@ const MoviePage = () => {
   }
 
 
-  if(isLoading){
-    return <h1>Loading...</h1>
+  if (isLoading) {
+    return <div>{isLoadingSpinner()}</div>
   }
   if(isError){
     return <Alert variant = "danger">{error.message}</Alert>
