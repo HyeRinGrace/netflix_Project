@@ -65,12 +65,13 @@ const MoviePage = () => {
         </Col>
       ))}
       </Row>
+      
       <ReactPaginate
         nextLabel="next >"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={5} // 한 번에 보여줄 페이지 수
         marginPagesDisplayed={2}
-        pageCount={data.total_pages} // 전체 페이지 몇개인지
+        pageCount={data.total_pages} // 전체 페이지 수
         previousLabel="< previous"
         pageClassName="page-item"
         pageLinkClassName="page-link"
@@ -78,13 +79,14 @@ const MoviePage = () => {
         previousLinkClassName="page-link"
         nextClassName="page-item"
         nextLinkClassName="page-link"
-        breakLabel="..."
+        // breakLabel="..."
         breakClassName="page-item"
         breakLinkClassName="page-link"
         containerClassName="pagination"
         activeClassName="active"
         renderOnZeroPageCount={null}
-        forcePage={page-1} // 현재 페이지
+        forcePage={page - 1} // 현재 페이지
+        style={{ backgroundColor: 'black' }} // 페이지네이션의 배경색을 검은색으로 설정
       />
       </Col>
     </Row>

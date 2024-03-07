@@ -1,0 +1,7 @@
+.movie-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* 마우스 오버 시 카드 1.05배 확대 */
+}

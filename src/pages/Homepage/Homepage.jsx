@@ -3,7 +3,6 @@ import Banner from './components/Banner/Banner'
 import PopularMovieSlide from './components/PopularMovieSlide/PopularMovieSlide'
 import TopRatedMovieSlide from './components/TopRatedMovieSlide/TopRatedMovie'
 import UpcomingMovieSlide from './components/UpcomingMovieSlide/UpcomingMovie'
-import Bottom from './components/Bottom/Bottom'
 //1. 배너 만들기 => popular 영화를 들고 와서 첫번째 아이템으로
 //2. popular movie
 //3. top rated movie
@@ -16,7 +15,6 @@ const Homepage = () => {
       <PopularMovieSlide/>
       <TopRatedMovieSlide/>
       <UpcomingMovieSlide/>
-      <Bottom/>
     </div>
   )
 }
