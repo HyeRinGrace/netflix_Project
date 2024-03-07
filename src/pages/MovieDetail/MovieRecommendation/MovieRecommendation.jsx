@@ -6,13 +6,14 @@ import MovieCard from '../../../common/MovieCard/MovieCard';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { responsive } from '../../../constants/responsive';
+import isLoadingSpinner from '../../../common/Spinner/isLoadingSpinner';
 
 const MovieRecommendation = () => {
     let params = useParams();
     const { data, isLoading, isError,error } = useMovieRecommend(params);
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div>{isLoadingSpinner()}</div>
     }
     if(isError){
         return <div>{error.message}</div>

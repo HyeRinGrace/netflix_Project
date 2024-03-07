@@ -4,12 +4,12 @@ import React from 'react'
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert';
 import './Banner.style.css';
-import {Container} from 'react-bootstrap'
+import isLoadingSpinner from '../../../../common/Spinner/isLoadingSpinner';
 
 const Banner = () => {
     let { data, isLoading, isError, error } = usePopularMoviesQuery();
     if (isLoading) {
-      return <h1>Loading...</h1>
+      return <div>{isLoadingSpinner()}</div>
     }
     if (isError) {
       return <Alert variant="danger">{error.message}</Alert>; // JSX를 반환해야 합니다.
