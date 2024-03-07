@@ -22,22 +22,24 @@ const MoviePage = () => {
 
   const [query] = useSearchParams();
   const [page,setPage] = useState(1);
+  const [sortedData, setSortedData] = useState(null); // 정렬된 데이터를 저장할 상태
   const keyword = query.get('q');
-
   const {data,isLoading,isError,error} = useSearchMovieQuery({
     keyword,
     page,
   }); //키워드를 넘겨줌
+
+  // const array = [data.results];
 
   // 페이지네이션 클릭할때 실행시킬 함수
   const handlePageClick = ({selected}) =>{
     setPage(selected+1);
   }
   //인기순 버튼으로 클릭했을 때 실행시킬 함수
-  const SortPopularRank = () =>{
-    data.results.map((item) =>{
-      const best = item.popularity;
-    })
+  const SortPopularRank = () => {
+
+      // const Popular = [...array].sort();
+      // setSortedData(Popular);
   }
 
 
