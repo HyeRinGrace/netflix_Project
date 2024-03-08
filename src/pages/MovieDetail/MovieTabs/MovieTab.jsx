@@ -11,7 +11,7 @@ function MovieTab() {
   const handleTabSelect = (selectedTab) => {
     setActiveTab(selectedTab);
     //스크롤 진행 시, 자연스럽게 아래로 진행되게
-    const contentElement = document.getElementById(selectedTab.toLowerCase());
+    const contentElement = document.getElementById(selectedTab.toLowerCase()); //탭 이름을 소문자로 변환한 후, 해당하는 요소를 찾기
     if (contentElement) {
       contentElement.scrollIntoView({ behavior: 'smooth' });
     }

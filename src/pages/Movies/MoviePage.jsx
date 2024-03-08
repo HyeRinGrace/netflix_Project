@@ -35,12 +35,16 @@ const MoviePage = () => {
   const handlePageClick = ({selected}) =>{
     setPage(selected+1);
   }
+
+
   //인기순 버튼으로 클릭했을 때 실행시킬 함수
   const SortPopularRank = () => {
-
-      // const Popular = [...array].sort();
-      // setSortedData(Popular);
+      {data.results.map((item)=>{
+          console.log([item]);
+      })}
   }
+
+
 
 
   if (isLoading) {

@@ -17,7 +17,7 @@ const AppLayout = () => {
 
     const searchByKeyword = (event) =>{
       event.preventDefault();
-      //keyword값으로 url을 변경시켜줘야함
+      //keyword값으로 url을 변경시켜줘야함 이유눈 useParams 혹은 SearchParams이용을 위해...
       navigate(`/movies?q=${keyword}`);
       setKeyword('');
     }
