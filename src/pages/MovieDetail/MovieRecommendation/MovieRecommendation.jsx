@@ -23,7 +23,7 @@ const MovieRecommendation = () => {
 
     return (
         <div className="movie-recommendation-container">
-            <h4 style={{color:'white'}}>Recommendations</h4>
+            <h4 style={{color:'white'}}>관련 추천 영화</h4>
             <Carousel
                 responsive={responsive}
                 infinite={true}

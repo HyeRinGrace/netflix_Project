@@ -15,7 +15,7 @@ const MovieReviews = () => {
 
     return (
         <Container>
-            <h4 style={{ color: 'white' }}>Reviews</h4>
+            <h4 style={{ color: 'white' }}>리뷰</h4>
             {data?.results.slice(0, visibleReviews).map((review, index) => (
                 <Card key={index} className="my-3" style={{ backgroundColor: '#f8f9fa' }}>
                     <Card.Body>
@@ -27,7 +27,7 @@ const MovieReviews = () => {
             {/* 더보기 버튼 */}
             {visibleReviews < data?.results.length && (
                 <div className="text-center mt-4">
-                    <Button variant="danger" onClick={handleShowMoreReviews}>더 많은 리뷰 보기</Button>
+                    <Button variant="danger" onClick={handleShowMoreReviews}>더 많은 리뷰</Button>
                 </div>
             )}
         </Container>

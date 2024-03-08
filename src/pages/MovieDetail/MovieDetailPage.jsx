@@ -12,9 +12,11 @@ const MovieDetail = () => {
   let params = useParams();
   const { data, isLoading, isError, error } = useMovieDetails(params);
   const posterPath = data?.poster_path;
+  const backPoster = data?.backdrop_path;
+  console.log(backPoster);
   
-  const URL = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${posterPath}`;
-
+  const poster_URL = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${posterPath}`;
+  const backPoster_URL = `https://image.tmdb.org/t/p/original${backPoster}`;
 
   if (isLoading) {
     return <div>{isLoadingSpinner()}</div>
@@ -24,36 +26,39 @@ const MovieDetail = () => {
   }
 
   return (
-    <Container className='Container'>
-      <h1 style={{ color: 'white' }}>영화 정보</h1>
-      <div className='InfoContainer'>
-      <Row>
-          <Col sm={7} className='MovieDetailInfoImage' style={{ backgroundImage: `url(${URL})` }}>
-          </Col>
-          <Col sm={5} className='MovieInfo'>
-            <p className='MovieInfoContainer'>
-            <h1>{data?.title}</h1>
-            <p>{data?.overview}</p>
-            <p>{data.genres.map((item,index)=>(
-              <Badge className="badge" bg="danger" key={index}>{item?.name}</Badge>
-            ))}
-            </p>
-
-            <p className='MovieDetailInfo'>
-              <p> 연령제한 : {data?.adult?'over 18':'under 18'}</p>
-              <p> 개봉일자 : {data?.release_date}</p>
-              <p> 상영시간 : {data?.runtime}분</p>
-              <p> 평점 : {data?.vote_average} 점</p>
-            </p>
-            </p>
-          </Col>
-      </Row>
+    <>
+    <div className='MainPoster' style={{backgroundImage:`url(${backPoster_URL})`}}>
+      <Container className='Container'>
+        <div className='InfoContainer'>
+          <Row>
+            <Col sm={4} className='MovieInfo'>
+              <div className='MovieDetailInfoImage' style={{ backgroundImage: `url(${poster_URL})` }}></div>
+            </Col>
+            <Col sm={8} className='MovieInfoContainer'>
+              <h1>{data?.title}</h1>
+              <p>{data?.overview}</p>
+              <p>
+                {data.genres.map((item, index) => (
+                  <Badge className="badge" bg="danger" key={index}>{item?.name}</Badge>
+                ))}
+              </p>
+                <p> 연령제한 : {data?.adult ? 'over 18' : 'under 18'}</p>
+                <p> 개봉일자 : {data?.release_date}</p>
+                <p> 상영시간 : {data?.runtime}분</p>
+                <p> 평점 : {data?.vote_average} 점</p>
+            </Col>
+          </Row>
+        </div>
+      </Container>
       </div>
+      
+      <Container>
       <Row>
         <Col><MovieTab/></Col>
       </Row>
-    </Container>
+      </Container>
+      </>
   );
-};
-
+  
+              }
 export default MovieDetail;
