@@ -13,7 +13,6 @@ const MovieDetail = () => {
   const { data, isLoading, isError, error } = useMovieDetails(params);
   const posterPath = data?.poster_path;
   const backPoster = data?.backdrop_path;
-  console.log(backPoster);
   
   const poster_URL = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${posterPath}`;
   const backPoster_URL = `https://image.tmdb.org/t/p/original${backPoster}`;

@@ -17,7 +17,7 @@ const Banner = () => {
 
     // data.results[0]가 정의되어 있는지 확인
     const posterPath = data?.results[0].poster_path;
-    const imageUrl = `https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/${posterPath}`
+    const imageUrl = `https://image.tmdb.org/t/p/original${posterPath}`
 
     return (
       <>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Alert } from 'react-bootstrap';
 import { useSearchMovieQuery } from '../../hooks/useSearchMovie';
@@ -19,86 +19,99 @@ import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 //3. 페이지네이션 클릭할떄마다 page 바꿔주기
 //4. page 값이 바뀔때 마다 useSearchMovie에 page까지 넣어서 fetch
 const MoviePage = () => {
-
   const [query] = useSearchParams();
-  const [page,setPage] = useState(1);
-  const [sortedData, setSortedData] = useState(null); // 정렬된 데이터를 저장할 상태
+  const [page, setPage] = useState(1);
+  const [sortedData, setSortedData] = useState(null);
+  const [sortedRankData, setSortedRankData] = useState(null);
   const keyword = query.get('q');
-  const {data,isLoading,isError,error} = useSearchMovieQuery({
-    keyword,
-    page,
-  }); //키워드를 넘겨줌
+  const { data, isLoading, isError, error } = useSearchMovieQuery({ keyword, page });
 
-  // const array = [data.results];
 
-  // 페이지네이션 클릭할때 실행시킬 함수
-  const handlePageClick = ({selected}) =>{
-    setPage(selected+1);
+  //페이지네이션 클릭시, 함수 동작
+  const handlePageClick = ({ selected }) => {
+      setPage(selected + 1);
   }
 
-
-  //인기순 버튼으로 클릭했을 때 실행시킬 함수
+  //인기순으로 정렬
   const SortPopularRank = () => {
-      {data.results.map((item)=>{
-          console.log([item]);
-      })}
+      const sortedMovies = [...data.results].sort((a, b) => b.popularity - a.popularity);
+      setSortedData(sortedMovies);
+      setSortedRankData(null);
   }
 
+  //최신순으로 정렬
+  const SortRecentRank = () => {
+      const sortedRankMovies = [...data.results].sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
+      setSortedRankData(sortedRankMovies);
+      setSortedData(null);
+  }
 
+    // 페이지 이동 시 초기화
+    useEffect(() => {
+      setPage(1);
+      setSortedData(null);
+      setSortedRankData(null);
+    }, [keyword]);
+  
+    // 검색 시 초기화
+    useEffect(() => {
+      setSortedData(null);
+      setSortedRankData(null);
+    }, [page]);
+  
 
 
   if (isLoading) {
-    return <div>{isLoadingSpinner()}</div>
+      return <div>{isLoadingSpinner()}</div>
   }
-  if(isError){
-    return <Alert variant = "danger">{error.message}</Alert>
+  if (isError) {
+      return <Alert variant="danger">{error.message}</Alert>
   }
-  
 
   return (
-  <Container>
-    <Row>
-      <Col lg={4} xs={12}>
-        <Container className='SortButton'>
-          <Button variant='danger' onClick={SortPopularRank}>인기순</Button>
-          <Button variant='danger'>최신순</Button>
-        </Container>
-      </Col>
-      <Col lg={8} xs={12}> 
-        <Row>
-        {data?.results.map((movie,index)=> (
-        <Col key={index} lg={4} xs={12}>
-          <MovieCard movie={movie}/>
-        </Col>
-      ))}
-      </Row>
-      
-      <ReactPaginate
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5} // 한 번에 보여줄 페이지 수
-        marginPagesDisplayed={2}
-        pageCount={data.total_pages} // 전체 페이지 수
-        previousLabel="< previous"
-        pageClassName="page-item"
-        pageLinkClassName="page-link"
-        previousClassName="page-item"
-        previousLinkClassName="page-link"
-        nextClassName="page-item"
-        nextLinkClassName="page-link"
-        // breakLabel="..."
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
-        containerClassName="pagination"
-        activeClassName="active"
-        renderOnZeroPageCount={null}
-        forcePage={page - 1} // 현재 페이지
-        style={{ backgroundColor: 'black' }} // 페이지네이션의 배경색을 검은색으로 설정
-      />
-      </Col>
-    </Row>
-  </Container>
+      <Container>
+          <Row>
+            <Col lg={4} xs={12}>
+                  <Container className='SortButton'>
+                      <Button variant='danger' onClick={SortPopularRank}>인기순</Button>
+                      <Button variant='danger' onClick={SortRecentRank}>최신순</Button>
+                  </Container>
+              </Col>
+              <Col lg={8} xs={10} className='MovieBox'>
+                  <Row>
+                      {(sortedRankData || sortedData || data?.results)?.map((movie, index) => (
+                          <Col key={index} lg={4} xs={8}>
+                              <MovieCard movie={movie} />
+                          </Col>
+                      ))}  
+                  </Row>
+                  <div className='paginationContainer'>
+                  <ReactPaginate
+                      nextLabel="next >"
+                      onPageChange={handlePageClick}
+                      pageRangeDisplayed={5}
+                      marginPagesDisplayed={2}
+                      pageCount={data.total_pages}
+                      previousLabel="< previous"
+                      pageClassName="page-item"
+                      pageLinkClassName="page-link"
+                      previousClassName="page-item"
+                      previousLinkClassName="page-link"
+                      nextClassName="page-item"
+                      nextLinkClassName="page-link"
+                      breakClassName="page-item"
+                      breakLinkClassName="page-link"
+                      containerClassName="pagination"
+                      activeClassName="active"
+                      renderOnZeroPageCount={null}
+                      forcePage={page - 1}
+                      style={{ backgroundColor: 'black' }}
+                  />
+                  </div>
+              </Col>        
+          </Row>
+      </Container>
   );
-        }
+}
 
-export default MoviePage
+export default MoviePage;
