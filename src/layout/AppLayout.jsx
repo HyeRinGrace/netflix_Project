@@ -8,7 +8,7 @@ import {Outlet,useNavigate} from 'react-router-dom'; //router안에 있는 자�
 import '../layout/AppLayout.css';
 
 const AppLayout = () => {
-    const [keyword,setKeyword] = useState();
+    const [keyword,setKeyword] = useState('');
     const navigate = useNavigate();
 
     const toMoveMovies = () =>{
@@ -18,10 +18,11 @@ const AppLayout = () => {
     const searchByKeyword = (event) =>{
       event.preventDefault();
       //keyword값으로 url을 변경시켜줘야함 이유눈 useParams 혹은 SearchParams이용을 위해...
-      navigate(`/movies?q=${keyword}`);
-      setKeyword('');
+      if (keyword.trim() !== '') {
+        // 검색어가 공백이 아닌 경우에만 검색을 수행합니다.
+        navigate(`/movies?q=${keyword}`);
+      }
     }
-
 
     return (
         <div>

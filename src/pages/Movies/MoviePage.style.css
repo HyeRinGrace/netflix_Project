@@ -19,3 +19,30 @@ html{
     color: white !important;
     border: none;
 }
+
+
+.paginationContainer{
+    display: flex;
+    justify-content: center;
+    padding:80px;
+}
+
+/* 버튼 스타일 */
+@media (max-width: 720px) {
+    .SortButton {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; /* 다른 요소 위에 표시되도록 낮은 값으로 설정 */
+      padding-top:100px;
+    }
+  
+    .SortButton button {
+      margin-bottom: 10px;
+    }
+
+    .MovieBox{
+        padding:150px;
+    }
+  }
