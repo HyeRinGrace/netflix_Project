@@ -36,6 +36,7 @@ const MovieDetail = () => {
             <Col sm={8} className='MovieInfoContainer'>
               <h1>{data?.title}</h1>
               <p>{data?.overview}</p>
+              <p className='OverviewContainer'></p>
               <p>
                 {data.genres.map((item, index) => (
                   <Badge className="badge" bg="danger" key={index}>{item?.name}</Badge>

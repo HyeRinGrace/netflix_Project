@@ -1,3 +1,14 @@
+/* //검색
+//1. 검색어 입력 없이 movie 메뉴를 통해 진입 => popular movie 보여주기
+//2. 검색어 입력을 통해 검색과 동시에 movie페이지로 이동 => keyword와 관련된 영화들을 보여줌
+
+//페이지네이션
+//1.페이지네이션 설치
+//2.Page state 만들기
+//3. 페이지네이션 클릭할떄마다 page 바꿔주기
+//4. page 값이 바뀔때 마다 useSearchMovie에 page까지 넣어서 fetch */
+
+
 html{
     background-color: black;
 }
@@ -43,6 +54,31 @@ html{
     }
 
     .MovieBox{
-        padding:150px;
+        padding:300px;
     }
+  }
+
+  .MovieGenreContainer{
+    padding-top: 60px;
+    margin-left: 20px;
+  }
+
+  .NoGenre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .GenreBadge{
+    cursor: pointer;
+
+  }
+
+  @media (max-width: 720px){
+    .MovieGenreContainer{
+        padding-top: 50px;
+        margin-left: 20px;
+    }
+
   }
