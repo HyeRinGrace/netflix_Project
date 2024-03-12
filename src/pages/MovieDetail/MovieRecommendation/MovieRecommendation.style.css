@@ -5,3 +5,8 @@
 .movie-card:hover {
     transform: scale(1.05); /* 마우스 오버 시 카드 1.05배 확대 */
 }
+
+.NotFound{
+    padding-top: 80px;
+    padding-bottom: 100px;
+}

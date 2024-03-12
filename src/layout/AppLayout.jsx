@@ -13,6 +13,7 @@ const AppLayout = () => {
 
     const toMoveMovies = () =>{
       navigate('/movies');
+      window.location.reload();
     }
 
     const searchByKeyword = (event) =>{

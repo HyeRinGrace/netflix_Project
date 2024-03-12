@@ -20,21 +20,10 @@
     z-index: 2;
     opacity: 1 !important;
   }
-
   .MovieInfoContainer{
     border-radius: 10px;
-
-  }
-
-  .MovieInfoContainer h1{
     padding-top: 40px;
     color:white;
-
-  }
-
-  .MovieInfoContainer p{
-    color:white;
-
   }
   
   .MovieInfo {
@@ -86,4 +75,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.OverviewContainer{
+  border-bottom: solid 2px white;
+  padding: 15px;
 }
