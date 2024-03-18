@@ -10,6 +10,7 @@ import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 
 const MovieDetail = () => {
   let params = useParams();
+  console.log(params);
   const { data, isLoading, isError, error } = useMovieDetails(params);
   const posterPath = data?.poster_path;
   const backPoster = data?.backdrop_path;
@@ -38,7 +39,7 @@ const MovieDetail = () => {
               <p>{data?.overview}</p>
               <p className='OverviewContainer'></p>
               <p>
-                {data.genres.map((item, index) => (
+                {data?.genres.map((item, index) => (
                   <Badge className="badge" bg="danger" key={index}>{item?.name}</Badge>
                 ))}
               </p>

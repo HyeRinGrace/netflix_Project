@@ -36,7 +36,7 @@ const MovieRecommendation = () => {
                     ))}
                 </Carousel>
             ) : (
-                <div className="NotFound" style={{ color: 'white' }}>추천 영화가 없습니다.</div>
+                <div className="NotFound" style={{ color: 'white' }}>추천 영화가 존재하지 않습니다.</div>
             )}
         </div>
     );
