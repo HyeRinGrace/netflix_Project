@@ -1,0 +1,31 @@
+.coverContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999; 
+  }
+  
+  .blackImage {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+  }
+
+  .LOGO{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 250px;
+    font-size: 120px;
+    color: red;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+
+  }
+
+  .Cover {
+    overflow: hidden; /* 스크롤바를 숨깁니다. */
+  }

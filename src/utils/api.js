@@ -22,7 +22,7 @@ axios.interceptors.request.use(function (config) {
 
 // 응답 인터셉터 추가하기
 axios.interceptors.response.use(function (response) {
-    // 2xx 범위에 있는 상태 코드는 이 함수를 트리거 합니다.
+    // 2xx 범위에 있는 상태 코드는 이 함수를 트리거 
     // 응답 데이터가 있는 작업 수행
     return response;
   }, function (error) {
