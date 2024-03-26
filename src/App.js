@@ -7,6 +7,7 @@ import MovieDetailPage from './pages/MovieDetail/MovieDetailPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Bottom from './pages/Homepage/components/Bottom/Bottom';
+import Cover from './pages/Homepage/components/Cover/Cover';
 
 
 // 홈페이지 

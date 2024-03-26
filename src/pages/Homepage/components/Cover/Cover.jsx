@@ -4,10 +4,12 @@ import { Container } from 'react-bootstrap';
 import Black from '../../../../assets/blackImage.png';
 import { Fade } from "react-awesome-reveal";
 import NetflixSound from '../../../../assets/netflixSound.mp3';
+import {useNavigate} from 'react-router-dom';
 
-const Cover = () => {
+const Cover = ({setCover}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio(NetflixSound));
+  const navigate = useNavigate();
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -16,6 +18,10 @@ const Cover = () => {
     if (playPromise !== undefined) {
       playPromise.then(() => {
         setIsPlaying(true);
+        setCover(false);
+        setTimeout(()=>{
+            navigate('/');
+        },3000);
       }).catch(error => {
         console.error(error);
       });
@@ -25,7 +31,7 @@ const Cover = () => {
       audio.pause();
       audio.currentTime = 0;
     };
-  }, []);
+  }, []); // 빈 배열로 설정하여 페이지가 처음 로드될 때만 실행
 
   return (
     <Container className='Cover'>
