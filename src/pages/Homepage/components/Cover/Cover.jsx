@@ -11,8 +11,6 @@ const Cover = () => {
   const audioRef = useRef(new Audio(NetflixSound));
   const navigate = useNavigate();
 
-  console.log(audioRef);
-
   useEffect(() => {
     const audio = audioRef.current;
     const playPromise = audio.play();
