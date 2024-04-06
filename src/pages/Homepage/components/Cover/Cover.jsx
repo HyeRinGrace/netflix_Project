@@ -3,27 +3,15 @@ import '../Cover/Cover.css';
 import { Container } from 'react-bootstrap';
 import Black from '../../../../assets/blackImage.png';
 import { Fade } from "react-awesome-reveal";
-import NetflixSound from '../../../../assets/netflixSound.mp3';
 import { useNavigate } from 'react-router-dom';
 
 const Cover = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(new Audio(NetflixSound));
   const navigate = useNavigate();
 
   useEffect(() => {
-    const audio = audioRef.current;
-    const playPromise = audio.play();
-
-    playPromise.then(() => {
-      setIsPlaying(true);
-    }).catch(error => {
-      console.error(error);
-    });
 
     const timeoutId = setTimeout(() => {
-      audio.pause();
-      audio.currentTime = 0;
       setIsPlaying(false);
       navigate('/home');
     }, 3500); // 2초 후에 페이지 이동

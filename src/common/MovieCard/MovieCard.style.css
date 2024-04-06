@@ -1,5 +1,5 @@
 .movie-card{
-    width: 220px;
+    width: 210px;
     height: 330px;
     background-size: cover;
     cursor: pointer;
@@ -37,7 +37,30 @@
     
 }
 
-
 .movieTitle{
     justify-content: left;
+}
+
+
+@media (max-width: 768px) {
+    .movie-card{
+        width: 220px;
+        height: 330px;
+        background-size: cover;
+        cursor: pointer;
+        transition: 0.5s;
+        z-index: 3;
+        margin: 20px;
+    }
+    
+    .overlay{
+        width: 100%;
+        height: auto;
+        background: rgba(43, 41, 41, 0.9);
+        opacity: 0;
+        transition: all 1s;
+        color:white;
+        font-weight: bold;
+        overflow-wrap: break-word;
+    }
 }
