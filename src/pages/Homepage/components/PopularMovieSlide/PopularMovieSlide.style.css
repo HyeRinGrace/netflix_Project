@@ -1,0 +1,10 @@
+@media (max-width:768px) {
+    .movieContainer{
+        padding: 10px;
+    }
+
+    h3{
+        padding:20px;
+    }
+    
+}
