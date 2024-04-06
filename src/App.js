@@ -18,7 +18,8 @@ function App() {
     <>
     <Routes>
       <Route path ="/" element = {<AppLayout/>}>
-          <Route index element={<Homepage/>}/>
+          <Route path='/home' element={<Homepage/>}/>
+          <Route path='/' element = {<Cover/>}/>
           <Route path='/movies'>
           <Route index element = {<MoviePage/>}/>
             <Route path=':id' element={<MovieDetailPage/>}/>
@@ -29,8 +30,6 @@ function App() {
     </Routes>
     <Bottom/>
     </>
-    
-
   );
 }
 

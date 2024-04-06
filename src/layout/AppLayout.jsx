@@ -29,7 +29,7 @@ const AppLayout = () => {
         <div>
             <Navbar expand="lg" className="navContainer">
           <Container fluid>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/home">
               <img className = "logo"src='https://images.crowdspring.com/blog/wp-content/uploads/2016/06/27132348/netflix-new-logo.png'/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -39,7 +39,7 @@ const AppLayout = () => {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/home">Home</Nav.Link>
                 <Nav.Link onClick={toMoveMovies}>Movies</Nav.Link>
               </Nav>
               <Form className="d-flex" onSubmit={(event)=>searchByKeyword(event)}>
