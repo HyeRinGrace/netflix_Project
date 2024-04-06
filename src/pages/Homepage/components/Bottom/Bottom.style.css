@@ -7,3 +7,14 @@
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
+@media (max-width: 768px) {
+    .BottomContainer{
+         padding-top: 20px;
+         padding-bottom: 20px;
+     }
+     P{
+        font-size: 13px;
+     }
+    
+}

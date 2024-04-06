@@ -1,11 +1,12 @@
 .movie-card{
-    width: 220px;
+    width: 210px;
     height: 330px;
     background-size: cover;
     cursor: pointer;
     transition: 0.5s;
-    z-index: 3;
+    z-index: 1;
     margin: 20px;
+    position: relative;
 }
 
 .overlay{
@@ -41,3 +42,23 @@
 .movieTitle{
     justify-content: left;
 }
+
+@media (max-width: 768px) {
+    .movie-card {
+      width: 230px; /* 모바일 화면에서 작은 사이즈로 조정 */
+      height: 320px; /* 모바일 화면에서 작은 사이즈로 조정 */
+      margin: 2px; /* 간격을 더 작게 조정 */
+    }
+  
+    .overlay {
+      width: 100%; /* 모바일 화면에서 오버레이의 너비를 100%로 설정 */
+      height: 100%; /* 모바일 화면에서 오버레이의 높이를 자동으로 설정 */
+      background: rgba(43, 41, 41, 0.9); /* 배경 색상 유지 */
+      opacity: 0; /* 초기에 투명도 설정 */
+      transition: all 1s; /* 투명도 전환에 대한 전환 효과 */
+      color: white; /* 글자 색상 유지 */
+      font-weight: bold; /* 글자 굵기 유지 */
+      overflow-wrap: break-word; /* 글자 줄 바꿈 유지 */
+      padding: 5px; /* 내부 여백 추가 */
+    }
+  }

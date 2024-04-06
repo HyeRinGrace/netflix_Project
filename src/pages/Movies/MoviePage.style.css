@@ -77,8 +77,13 @@ html{
 
   @media (max-width: 720px){
     .MovieGenreContainer{
-        padding-top: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         margin-left: 20px;
+    }
+
+    .MovieBox{
+      padding:10px;
     }
 
   }
