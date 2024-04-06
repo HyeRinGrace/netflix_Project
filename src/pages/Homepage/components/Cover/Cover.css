@@ -29,3 +29,26 @@
   .Cover {
     overflow: hidden; /* 스크롤바를 숨깁니다. */
   }
+
+
+
+  @media (max-width: 768px){
+    .LOGO{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      font-size: 80px;
+      color: red;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 600;
+  
+    }
+
+    .blackImage {
+      display: block;
+      margin: 0 auto;
+      width: 30px;
+    }
+
+  }
