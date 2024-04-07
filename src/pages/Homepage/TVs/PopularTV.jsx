@@ -27,7 +27,7 @@ const PopularTV = () => {
                   src={`https://image.tmdb.org/t/p/w220_and_h330_bestv2${item.poster_path}`}
                   alt={item.name}
                 />
-                <div className="overlay">
+                <div className="tv-card-overlay">
                   <h4 className="tv-title">{item?.name}</h4>
                   <div className="tv-info">
                     <div>평점: {item?.vote_average}</div>
