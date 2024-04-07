@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { usePopularTV } from '../../../hooks/usePopularTV';
-import './PopularTV.css'; // 커스텀 CSS 파일 import
+import './PopularTV.css';
 import isLoadingSpinner from '../../../common/Spinner/isLoadingSpinner';
 
 const PopularTV = () => {
