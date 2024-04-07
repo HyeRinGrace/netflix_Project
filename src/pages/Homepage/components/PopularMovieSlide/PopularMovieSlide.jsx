@@ -10,6 +10,8 @@ import '../PopularMovieSlide/PopularMovieSlide.style.css';
 const PopularMovieSlide = () => {
     const{data,isLoading,isError,error} = usePopularMoviesQuery();
 
+    console.log(data);
+
     if (isLoading) {
       return <div>{isLoadingSpinner()}</div>
     }
