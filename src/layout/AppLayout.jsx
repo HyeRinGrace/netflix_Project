@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Outlet,useNavigate} from 'react-router-dom'; //router안에 있는 자손들을 가지고 오게됨
 import '../layout/AppLayout.css';
+import PopularTV from '../pages/Homepage/TVs/PopularTV';
 
 const AppLayout = () => {
     const [keyword,setKeyword] = useState('');
@@ -41,6 +42,7 @@ const AppLayout = () => {
               >
                 <Nav.Link href="/home">Home</Nav.Link>
                 <Nav.Link onClick={toMoveMovies}>Movies</Nav.Link>
+                <Nav.Link href="/tvs">TVs</Nav.Link>
               </Nav>
               <Form className="d-flex" onSubmit={(event)=>searchByKeyword(event)}>
                 <Form.Control

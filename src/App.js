@@ -8,6 +8,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Bottom from './pages/Homepage/components/Bottom/Bottom';
 import Cover from './pages/Homepage/components/Cover/Cover';
+import PopularTV from './pages/Homepage/TVs/PopularTV';
 
 
 // 홈페이지 
@@ -20,6 +21,7 @@ function App() {
       <Route path ="/" element = {<AppLayout/>}>
           <Route path='/home' element={<Homepage/>}/>
           <Route path='/' element = {<Cover/>}/>
+          <Route path='/tvs' element = {<PopularTV/>}/>
           <Route path='/movies'>
           <Route index element = {<MoviePage/>}/>
             <Route path=':id' element={<MovieDetailPage/>}/>

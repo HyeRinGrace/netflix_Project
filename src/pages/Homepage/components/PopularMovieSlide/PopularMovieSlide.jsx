@@ -9,6 +9,8 @@ import isLoadingSpinner from '../../../../common/Spinner/isLoadingSpinner';
 const PopularMovieSlide = () => {
     const{data,isLoading,isError,error} = usePopularMoviesQuery();
 
+    console.log(data);
+
     if (isLoading) {
       return <div>{isLoadingSpinner()}</div>
     }
