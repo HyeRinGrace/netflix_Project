@@ -8,6 +8,8 @@ import isLoadingSpinner from '../../../../common/Spinner/isLoadingSpinner';
 
 const Banner = () => {
     let { data, isLoading, isError, error } = usePopularMoviesQuery();
+    const randomNumber = Math.floor(Math.random() * 3);
+
     if (isLoading) {
       return <div>{isLoadingSpinner()}</div>
     }
