@@ -16,7 +16,7 @@ const UpcomingMovie = () => {
     }
 
   return (
-    <div>
+    <div className='movieContainer'>
       <MovieSlider title="개봉 예정 영화" movies={data?.results} responsive={responsive}/>
     </div>
   )

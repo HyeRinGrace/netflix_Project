@@ -14,7 +14,7 @@ const Cover = () => {
     const timeoutId = setTimeout(() => {
       setIsPlaying(false);
       navigate('/home');
-    }, 3500); // 2초 후에 페이지 이동
+    }, 3000); // 2초 후에 페이지 이동
 
     return () => {
       clearTimeout(timeoutId);
@@ -25,7 +25,8 @@ const Cover = () => {
     <Container className='Cover'>
       <div className='coverContainer'>
         <img className="blackImage" src={Black} alt="Black background" />
-        <Fade duration={5000} className='LOGO'>NETFLIX</Fade>
+        <Fade duration={5000} className='LOGO'>NETFLIX
+        </Fade>
       </div>
     </Container>
   );

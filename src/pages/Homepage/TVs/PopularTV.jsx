@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { usePopularTV } from '../../../hooks/usePopularTV';
 import './PopularTV.css';
 import isLoadingSpinner from '../../../common/Spinner/isLoadingSpinner';
+import { useNavigate } from 'react-router-dom';
 
 const PopularTV = () => {
   const { data, isLoading, isError, error } = usePopularTV();
+  const navigate = useNavigate();
 
   if (isLoading) {
     return <div>{isLoadingSpinner()}</div>
   }
   if(isError){
       return <Alert variant = "danger">{error.message}</Alert>
+  }
+
+  // 여기서 클릭된 id를 useQuery 한테 전달하면 됨
+  const handlerTV = (id) => {
+    navigate(`/tvs/${id}`);
+    window.scrollTo(0,0); //최상단으로 이동되는 경로 추가
   }
 
   return (
@@ -27,7 +35,7 @@ const PopularTV = () => {
                   src={`https://image.tmdb.org/t/p/w220_and_h330_bestv2${item.poster_path}`}
                   alt={item.name}
                 />
-                <div className="tv-card-overlay">
+                <div className="tv-card-overlay" onClick={() => handlerTV(item?.id)}>
                   <h4 className="tv-title">{item?.name}</h4>
                   <div className="tv-info">
                     <div>평점: {item?.vote_average}</div>

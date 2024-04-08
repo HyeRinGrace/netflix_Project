@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Bottom from './pages/Homepage/components/Bottom/Bottom';
 import Cover from './pages/Homepage/components/Cover/Cover';
 import PopularTV from './pages/Homepage/TVs/PopularTV';
+import TvDetailPage from './pages/TvDetail/TvDetailPage';
 
 
 // 홈페이지 
@@ -21,7 +22,12 @@ function App() {
       <Route path ="/" element = {<AppLayout/>}>
           <Route path='/home' element={<Homepage/>}/>
           <Route path='/' element = {<Cover/>}/>
-          <Route path='/tvs' element = {<PopularTV/>}/>
+          {/* TV 이동경로  */}
+          <Route path='/tvs'>
+            <Route index element = {<PopularTV/>}/>
+            <Route path=':id' element = {<TvDetailPage/>}/>
+          </Route>
+          {/* 영화 이동 경로 */}
           <Route path='/movies'>
           <Route index element = {<MoviePage/>}/>
             <Route path=':id' element={<MovieDetailPage/>}/>

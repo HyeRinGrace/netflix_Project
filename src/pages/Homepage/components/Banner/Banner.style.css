@@ -32,5 +32,7 @@
     .banner-text-area {
       color: transparent;
       opacity: 0;
+      width: 300px;
+      padding-left:40px
     }
   }

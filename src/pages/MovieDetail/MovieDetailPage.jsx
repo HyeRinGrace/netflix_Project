@@ -2,15 +2,14 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useMovieDetails } from '../../hooks/useMovieDetails';
 import Alert from 'react-bootstrap/Alert';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container,Badge } from 'react-bootstrap';
 import '../MovieDetail/MovieDetailPage.style.css';
-import {Badge} from 'react-bootstrap';
 import MovieTab from './MovieTabs/MovieTab';
 import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 
 const MovieDetail = () => {
-  let params = useParams();
-  console.log(params);
+  let params = useParams(); //id 값을 가져오기 위해 선언
+
   const { data, isLoading, isError, error } = useMovieDetails(params);
   const posterPath = data?.poster_path;
   const backPoster = data?.backdrop_path;
