@@ -7,11 +7,3 @@
     padding-top: 40px;
     padding-bottom: 40px;
 }
-
-@media (max-width:768px) {
-    p{
-        font-size: 14px;
-    }
-}
-
-/* 이부분이 왜 에러가 나지 */
