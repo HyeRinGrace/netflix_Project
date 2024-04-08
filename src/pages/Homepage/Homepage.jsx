@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Banner from './components/Banner/Banner';
 import PopularMovieSlide from './components/PopularMovieSlide/PopularMovieSlide';
 import TopRatedMovieSlide from './components/TopRatedMovieSlide/TopRatedMovie';
 import UpcomingMovieSlide from './components/UpcomingMovieSlide/UpcomingMovie';
-import '../Homepage/Homepage.style.css';
+
 
 const Homepage = () => {
  

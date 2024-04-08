@@ -15,7 +15,7 @@ const TopRatedMovie = () => {
         return <Alert variant = "danger">{error.message}</Alert>
     }
   return (
-    <div>
+    <div className='movieContainer'>
       <MovieSlider title="높은 순위 영화" movies={data?.results} responsive={responsive}/>
     </div>
   )

@@ -9,7 +9,6 @@ import isLoadingSpinner from '../../../../common/Spinner/isLoadingSpinner';
 const PopularMovieSlide = () => {
     const{data,isLoading,isError,error} = usePopularMoviesQuery();
 
-    console.log(data);
 
     if (isLoading) {
       return <div>{isLoadingSpinner()}</div>
@@ -19,7 +18,7 @@ const PopularMovieSlide = () => {
     }
 
   return (
-    <div>
+    <div className='movieContainer'>
       <MovieSlider title="인기있는 영화" movies={data.results} responsive={responsive}/>
     </div>
   )

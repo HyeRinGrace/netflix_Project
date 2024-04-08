@@ -29,3 +29,11 @@
   .Cover {
     overflow: hidden; /* 스크롤바를 숨깁니다. */
   }
+
+
+  @media (max-width: 768px) {
+    .LOGO {
+      padding: 200px; 
+      font-size: 70px; 
+    }
+  }

@@ -19,7 +19,7 @@ const MoviePage = () => {
 
   const keyword = query.get('q');//q 뒤에오는 값 가져오기
   const { data, isLoading, isError, error } = useSearchMovieQuery({ keyword, page });//searchQuery 훅 가져와서 사용
-  console.log(data);
+ 
   const { data: genre } = useMovieGenreQuery(); //장르 Hook 가져와서 사용
 
   //페이지 이동함수
