@@ -32,7 +32,6 @@ const MoviePage = () => {
     const sortedMovies = [...data.results].sort((a, b) => b.popularity - a.popularity);
     setSortedData(sortedMovies);
     setSortedRankData(null);
-    // setSelectedGenre(null); // 인기순 정렬 시에는 장르 선택을 초기화
   };
 
   //최신 영화 함수
@@ -40,7 +39,6 @@ const MoviePage = () => {
     const sortedRankMovies = [...data.results].sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
     setSortedRankData(sortedRankMovies);
     setSortedData(null);
-    // setSelectedGenre(null); // 최신순 정렬 시에는 장르 선택을 초기화
   };
 
   // 페이지 이동 시 초기화
@@ -48,7 +46,6 @@ const MoviePage = () => {
     setPage(1);
     setSortedData(null);
     setSortedRankData(null);
-    // setSelectedGenre(null);
   }, [keyword]);
 
 
@@ -56,7 +53,6 @@ const MoviePage = () => {
    useEffect(() => {
     setSortedData(null);
     setSortedRankData(null);
-    // setSelectedGenre(null);
   }, [page]);
 
 
