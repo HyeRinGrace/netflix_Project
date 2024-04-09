@@ -3,7 +3,7 @@ import {useQuery} from '@tanstack/react-query';
 
 
 const fetchUpcomingMovies = () =>{
-    return api.get('/movie/upcoming');
+    return api.get('/movie/upcoming?language=ko&page');
 }
 
 export const useUpcomingMoviesQuery = () =>{

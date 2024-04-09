@@ -5,7 +5,7 @@ export const useMovieDetails = ({id}) =>{
     return useQuery({
         queryKey:['movie-details',{id}],
         queryFn:()=>{
-            return api.get(`/movie/${id}`)
+            return api.get(`/movie/${id}?language=ko&page`)
         },
         select:(result) => result.data,
 
