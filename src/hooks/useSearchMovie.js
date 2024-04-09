@@ -4,7 +4,7 @@ import api from '../utils/api';
 const fetchSearchMovie = ({keyword, page}) =>{
     return keyword?api.get(`/search/movie?query=${keyword}&page=${page}?language=ko&page`)
     :api.get(`/movie/popular?page=${page}&language=ko&page`);
-    //키워드가 있다면, 키워드 값으로 url을 전달받고, 키워드가 없다면 인기있는 영화를 보여줄거임
+    //키워드가 있다면, 키워드 값으로 url을 전달받고, 키워드가 없다면 인기있는 영화를 보여줄거임 + 한국어로 변경완료
 }
 
 export const useSearchMovieQuery = ({keyword, page}) =>{
