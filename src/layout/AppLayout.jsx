@@ -47,13 +47,13 @@ const AppLayout = () => {
               <Form className="d-flex" onSubmit={(event)=>searchByKeyword(event)}>
                 <Form.Control
                   type="search"
-                  placeholder="영화를 검색해주세요."
+                  placeholder="검색어를 입력해주세요."
                   className="me-2"
                   aria-label="Search"
                   value={keyword}
                   onChange={(event)=>setKeyword(event.target.value)}
                 />
-                <Button variant="outline-danger" type='submit'>Search</Button>
+                <Button variant="outline-danger" type='submit' style={{ font:'small-caption'}}>Search</Button>
               </Form>
             </Navbar.Collapse>
           </Container>
