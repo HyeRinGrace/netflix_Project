@@ -3,7 +3,7 @@ import api from '../utils/api';
 
 
 const fetchMovieGenre=()=>{
-    return api.get(`/genre/movie/list`);
+    return api.get(`/genre/movie/list?language=ko&page`);
 }
 
 export const useMovieGenreQuery = () =>{

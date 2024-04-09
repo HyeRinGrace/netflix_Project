@@ -2,7 +2,7 @@ import {useQuery} from '@tanstack/react-query';
 import api from "../utils/api";
 
 const fetchPopularTVs= ()=>{
-    return api.get(`/tv/popular`);
+    return api.get(`/tv/popular?language=ko&page`);
 }
 
 export const usePopularTV = () =>{

@@ -40,14 +40,14 @@ const AppLayout = () => {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
               >
-                <Nav.Link href="/home">Home</Nav.Link>
-                <Nav.Link onClick={toMoveMovies}>Movies</Nav.Link>
-                <Nav.Link href="/tvs">TVs</Nav.Link>
+                <Nav.Link href="/home">홈</Nav.Link>
+                <Nav.Link onClick={toMoveMovies}>영화</Nav.Link>
+                <Nav.Link href="/tvs">해외TV</Nav.Link>
               </Nav>
               <Form className="d-flex" onSubmit={(event)=>searchByKeyword(event)}>
                 <Form.Control
                   type="search"
-                  placeholder="Search"
+                  placeholder="영화를 검색해주세요."
                   className="me-2"
                   aria-label="Search"
                   value={keyword}
