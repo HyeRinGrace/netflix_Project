@@ -63,4 +63,8 @@
         font-weight: bold;
         overflow-wrap: break-word;
     }
+
+    .movie-detail-Info{
+        display: none;
+    }
 }
