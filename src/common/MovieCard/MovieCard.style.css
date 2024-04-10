@@ -43,23 +43,23 @@
 
 
 @media (max-width: 768px) {
-    .movie-card{
-        width: 220px;
-        height: 330px;
+    .movie-card {
+        width: 130px; /* 모바일 화면 크기에 맞게 조정 */
+        height: 195px; /* 원하는 크기로 조정 가능 */
         background-size: cover;
         cursor: pointer;
         transition: 0.5s;
         z-index: 3;
-        margin: 20px;
+        margin: 25px;
     }
     
-    .overlay{
+    .overlay {
         width: 100%;
         height: auto;
         background: rgba(43, 41, 41, 0.9);
         opacity: 0;
         transition: all 1s;
-        color:white;
+        color: white;
         font-weight: bold;
         overflow-wrap: break-word;
     }
