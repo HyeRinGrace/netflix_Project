@@ -21,7 +21,7 @@ const MoviePage = () => {
   const { data, isLoading, isError, error } = useSearchMovieQuery({ keyword, page });//searchQuery 훅 가져와서 사용
  
   const { data: genre } = useMovieGenreQuery(); //장르 Hook 가져와서 사용
-
+  
   //페이지 이동함수
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
