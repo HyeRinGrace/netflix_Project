@@ -54,8 +54,8 @@
     }
     
     .overlay {
-        width: 100%;
-        height: auto;
+        width: 130px;
+        height: 195px;
         background: rgba(43, 41, 41, 0.9);
         opacity: 0;
         transition: all 1s;
