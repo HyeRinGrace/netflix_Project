@@ -26,6 +26,7 @@ const MoviePage = () => {
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
   };
+  // 이슈 수정해야함 배열 복사 후 반영해야함
 
   //인기있는 함수
   const handleSortPopularRank = () => {
