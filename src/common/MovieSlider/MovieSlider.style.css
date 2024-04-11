@@ -6,7 +6,7 @@
 
 @media (max-width:480px){
     .carousel-container{
-        height: 330px;
+        height: 250px;
         display: flex;
         justify-content: space-between;
     }

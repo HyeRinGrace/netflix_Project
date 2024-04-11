@@ -60,12 +60,6 @@ html{
       margin-bottom: 10px;
     }
 
-    .row{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    
-    }
 
     .paginationContainer {
       padding: 20px 0; /* 페이지네이션의 상하 여백 조정 */
@@ -84,9 +78,18 @@ html{
     .pagination .page-item:last-child {
       display: inline-block; /* 처음과 마지막 페이지 버튼만 표시 */
     }
+  
+    .MovieBox > div {
+      width: 100%; /* 각 카드가 화면의 48%를 차지하도록 설정 */
+      margin-bottom: 20px; /* 각 카드 사이에 간격을 주기 위해 마진 추가 */
+    }
 
+    .MovieBox{
+      padding-top:250px
+    }
 
   }
+
 
 
   .MovieGenreContainer{

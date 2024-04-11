@@ -62,3 +62,7 @@
     padding:20px;
     justify-content: left;
   }
+
+  .tv-poster{
+    border-radius: 10px;
+  }
