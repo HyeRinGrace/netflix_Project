@@ -10,6 +10,7 @@ import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 
 const PAGE_SIZE = 10;
+
 const MoviePage = () => {
   const [query] = useSearchParams(); //URL 찾기위해 선언
   const [page, setPage] = useState(1); //페이지네이션 상태함수(초기값 1)
@@ -17,10 +18,13 @@ const MoviePage = () => {
   const [sortedRankData, setSortedRankData] = useState(null);//최신순 영화 정렬 상태함수
   const [selectedGenre, setSelectedGenre] = useState(null);//장르 정렬 상태 함수
 
+
   const keyword = query.get('q');//q 뒤에오는 값 가져오기
   const { data, isLoading, isError, error } = useSearchMovieQuery({ keyword, page });//searchQuery 훅 가져와서 사용
+
  
   const { data: genre } = useMovieGenreQuery(); //장르 Hook 가져와서 사용
+
   
   //페이지 이동함수
   const handlePageClick = ({ selected }) => {
@@ -43,7 +47,6 @@ const MoviePage = () => {
 
   // 페이지 이동 시 초기화
   useEffect(() => {
-    setPage(1);
     setSortedData(null);
     setSortedRankData(null);
   }, [keyword]);
@@ -54,6 +57,9 @@ const MoviePage = () => {
     setSortedData(null);
     setSortedRankData(null);
   }, [page]);
+
+  useEffect(() => {
+  }, [selectedGenre, data]); 
 
 
   //장르 필터 
@@ -78,7 +84,7 @@ const MoviePage = () => {
   }
 
   const displayData = sortedData || sortedRankData || selectedGenre || data.results; //뿌려줄 데이터들 모아놓기
-
+  const pageCount = selectedGenre ? Math.ceil(selectedGenre.length / PAGE_SIZE) : Math.ceil(data?.total_results / PAGE_SIZE);
   return (
     <Container>
       <Row>
@@ -96,7 +102,7 @@ const MoviePage = () => {
           </Container>
     
         </Col>
-        <Col lg={8} xs={10} className='MovieBox'>
+        <Col lg={8} xs={12} className='MovieBox'>
           {displayData.length === 0 && <h4 className= "NoGenre" variant="info">선택한 장르가 존재하지 않습니다.</h4>}
           <Row>
             {displayData.map((movie, index) => (
@@ -111,7 +117,7 @@ const MoviePage = () => {
               onPageChange={handlePageClick}
               pageRangeDisplayed={5}
               marginPagesDisplayed={2}
-              pageCount={selectedGenre ? Math.ceil(selectedGenre.length / PAGE_SIZE) : data.total_pages}
+              pageCount={pageCount}
               previousLabel="< previous"
               pageClassName="page-item"
               pageLinkClassName="page-link"

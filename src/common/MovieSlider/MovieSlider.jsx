@@ -18,7 +18,7 @@ const MovieSlider = ({title,movies, responsive}) => {
         containerClass='carousel-container'
         responsive={responsive}
         transitionDuration={500}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        removeArrowOnDeviceType={[]}
         autoPlaySpeed={1000}
         keyBoardControl={true}
         partialVisible={true}

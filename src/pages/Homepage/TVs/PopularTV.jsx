@@ -27,7 +27,7 @@ const PopularTV = () => {
       <h3 className="section-title">해외 인기있는 TV 프로그램</h3>
       <Row>
         {data.results.map((item, index) => (
-          <Col key={index} xs={12} sm={6} md={4} lg={3}>
+          <Col key={index} xs={10} sm={6} md={4} lg={3}>
             <div className="tv-card">
               <div className="tv-image-wrapper">
                 <img
