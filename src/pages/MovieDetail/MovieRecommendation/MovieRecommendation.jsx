@@ -8,6 +8,8 @@ import 'react-multi-carousel/lib/styles.css';
 import { responsive } from '../../../constants/responsive';
 import isLoadingSpinner from '../../../common/Spinner/isLoadingSpinner';
 
+
+// 주석추가...
 const MovieRecommendation = () => {
     let params = useParams();
     const { data, isLoading, isError, error } = useMovieRecommend(params);
