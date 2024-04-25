@@ -6,6 +6,7 @@ import MovieCard from '../MovieCard/MovieCard';
 
 const MovieSlider = ({title,movies, responsive}) => {
 
+  //캐러셀 설정 부분
   return (
     
     <div>
