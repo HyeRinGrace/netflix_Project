@@ -24,7 +24,7 @@ const MovieRecommendation = () => {
     return (
         <div className="movie-recommendation-container">
             <h4 style={{ color: 'white' }}>관련 추천 영화</h4>
-            {movies && movies.length > 0 ? (
+            {movies && movies.length > 0 ? (// length가 영 이상일때 
                 <Carousel
                     responsive={responsive}
                     infinite={true}

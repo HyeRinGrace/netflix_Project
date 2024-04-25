@@ -76,6 +76,7 @@ const MoviePage = () => {
     }
   };
 
+  //로딩스피너
   if (isLoading) {
     return <div>{isLoadingSpinner()}</div>;
   }

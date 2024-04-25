@@ -10,8 +10,8 @@ import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 const MovieDetail = () => {
   let params = useParams(); //id 값을 가져오기 위해 선언
 
-  const { data, isLoading, isError, error } = useMovieDetails(params);
-  const posterPath = data?.poster_path;
+  const { data, isLoading, isError, error } = useMovieDetails(params); //데이터 가져오기
+  const posterPath = data?.poster_path; // 이미지
   const backPoster = data?.backdrop_path;
   
   const poster_URL = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${posterPath}`;
