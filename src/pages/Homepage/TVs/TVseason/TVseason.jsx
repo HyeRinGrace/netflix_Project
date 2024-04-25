@@ -9,7 +9,7 @@ const TVseason = () => {
     const params = useParams();
     
     const {data, isLoading, isError, error} = useTvVideo(params);
-    let YOUTUBE_KEY = data?.results[0]?.key;
+    let YOUTUBE_KEY = data?.results[0]?.key; //유튜브 키가 0아니면 1로 고정되어있어서 0으로 일단 하드코딩
     const URL = `https://www.youtube.com/embed/${YOUTUBE_KEY}`
 
 

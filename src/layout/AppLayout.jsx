@@ -12,6 +12,7 @@ const AppLayout = () => {
     const [keyword,setKeyword] = useState('');
     const navigate = useNavigate();
 
+    //새로고침되게 변경
     const toMoveMovies = () =>{
       navigate('/movies');
       window.location.reload();
