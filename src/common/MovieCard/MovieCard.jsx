@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const MovieCard = ({ movie }) => {
     const navigate = useNavigate();
 
+    // 영화 상세페이지 진입 후 가장 상단으로 이동되게 변경
     const moveToDetailPage = () => {
         navigate(`/movies/${movie.id}`);
         window.scrollTo(0, 0);
