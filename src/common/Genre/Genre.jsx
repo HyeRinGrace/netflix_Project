@@ -10,6 +10,7 @@ const Genre = ({movie}) => {
       if(!genreData){
         return []
       }
+      // 장르데이터 필터
       const genreNameList = genreIdList.map((id)=>{
         const genreObj = genreData.find((genre)=>genre.id === id)
         return genreObj.name;
