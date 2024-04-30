@@ -6,6 +6,7 @@ import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 const Genre = ({movie}) => {
     const {data:genreData} = useMovieGenreQuery();
     
+    //장르필터
     const showGenre = (genreIdList) =>{
       if(!genreData){
         return []
