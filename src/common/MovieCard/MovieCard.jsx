@@ -9,7 +9,7 @@ const MovieCard = ({ movie }) => {
     // 영화 상세페이지 진입 후 가장 상단으로 이동되게 변경
     const moveToDetailPage = () => {
         navigate(`/movies/${movie.id}`);
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0); // 윈도우 최상단으로 이동되게 함
     }
 
     // 모바일 환경에서 작은 이미지 URL
