@@ -7,6 +7,8 @@ import '../MovieDetail/MovieDetailPage.style.css';
 import MovieTab from './MovieTabs/MovieTab';
 import isLoadingSpinner from '../../common/Spinner/isLoadingSpinner';
 
+
+// 무브디테일 페이지
 const MovieDetail = () => {
   let params = useParams(); //id 값을 가져오기 위해 선언
 
@@ -51,7 +53,6 @@ const MovieDetail = () => {
         </div>
       </Container>
       </div>
-      
       <Container>
       <Row>
         <Col><MovieTab/></Col>
